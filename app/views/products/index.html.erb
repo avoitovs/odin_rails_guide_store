@@ -1,0 +1,8 @@
+<h1>Products list</h1>
+<% @products.each do |p| %>
+<div>
+<%= link_to "#{p.name}", product_path(p.id) %>
+</div>
+<% end %>
+<%= button_to "Create new product", new_product_path, method: :get if authenticated? %>
+<%= button_to "Login", new_session_path, method: :get unless authenticated? %>
